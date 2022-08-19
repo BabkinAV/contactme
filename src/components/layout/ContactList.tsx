@@ -3,7 +3,8 @@ import React from 'react';
 import { useAppSelector } from '../../store/hooksStore';
 //MUI stuff
 import Grid from '@mui/material/Unstable_Grid2';
-import { Box } from '@mui/material';
+import { Box, Fab } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 import ContactCard from '../ContactCard';
 
 const ContactList = () => {
@@ -17,6 +18,9 @@ const ContactList = () => {
           </Grid>
         ))}
       </Grid>
+      <Fab color="primary" aria-label="add" sx={{position: 'fixed', right: '3rem', bottom: '3rem'}}>
+        <AddIcon />
+      </Fab>
     </Box>
   );
 };
