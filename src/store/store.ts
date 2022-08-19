@@ -3,9 +3,11 @@ import {
   combineReducers,
 } from '@reduxjs/toolkit';
 import uiReducer from './slices/uiSlice';
+import dataReducer from './slices/dataSlice';
 
 const rootReducer = combineReducers({
   ui: uiReducer,
+  data: dataReducer
 });
 
 export function setupStore() {
@@ -19,7 +21,6 @@ export function setupStore() {
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setupStore>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = AppStore['dispatch']
 
 export const store = setupStore();

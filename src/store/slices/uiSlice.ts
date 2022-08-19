@@ -20,4 +20,6 @@ export const uiSlice = createSlice({
   },
 });
 
+export const {setAuthenticated} = uiSlice.actions;
+
 export default uiSlice.reducer;

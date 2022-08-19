@@ -1,15 +1,13 @@
 import React from 'react';
+//Redux stuff
+import { useAppSelector } from '../../store/hooksStore';
 //MUI stuff
 import Grid from '@mui/material/Unstable_Grid2';
 import { Box } from '@mui/material';
-
-import {Contact} from '../../dataModel'
-
-import { contactListArray } from '../../data';
 import ContactCard from '../ContactCard';
 
 const ContactList = () => {
-  let contactList:Contact[] = contactListArray;
+  const contactList = useAppSelector((state)=>state.data.contactList);
   return (
     <Box>
       <Grid container spacing={2} justifyItems="center">

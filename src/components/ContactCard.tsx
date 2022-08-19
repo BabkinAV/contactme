@@ -4,7 +4,6 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { List, ListItem, ListItemAvatar, Avatar, ListItemText } from '@mui/material';
@@ -16,20 +15,11 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {Contact} from '../dataModel'
 
 
-import blankImage from '../assets/img/no-avatar.png';
-
-
 const ContactCard = ({ firstName, lastName, phoneNumber, email} : Contact) => {
   return (
     <Card sx={{ maxWidth: 300, color: '#00b0ff', marginLeft: {xs: 'auto', lg: 'unset'}, marginRight: {xs: 'auto', lg: 'unset'} }}>
-    <CardMedia
-      component="img"
-      height="210"
-      image={blankImage}
-      alt="user pic"
-    />
     <CardContent>
-      <Typography gutterBottom variant="h5" component="div">
+      <Typography gutterBottom variant="h5" component="div" sx={{textAlign: 'center'}}>
         {`${firstName} ${lastName}`}
       </Typography>
       <List>

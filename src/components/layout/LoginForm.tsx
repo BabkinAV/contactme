@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
+
+//Redux stuff
+import { useAppDispatch } from '../../store/hooksStore';
+import { setAuthenticated } from '../../store/slices/uiSlice';
+
+
+
+//MUI stuff
 import { Paper, Box, Button, Typography, TextField } from '@mui/material';
+import { styled } from '@mui/material';
+
+const StyledForm = styled('form')({
+  textAlign: 'center',
+})
 
 const LoginForm = () => {
+  const dispatch = useAppDispatch();
+
   const [isLogin, setIsLogin] = useState(true);
 
   function switchAuthModeHandler() {
@@ -10,7 +25,7 @@ const LoginForm = () => {
 
   return (
     <Paper sx={{ maxWidth: '350px', mx: 'auto', p: '25px' }}>
-      <form>
+      <StyledForm>
         <Typography variant="h6" gutterBottom>
           Please {isLogin ? 'Log In' : 'Sign Up'}
         </Typography>
@@ -35,7 +50,7 @@ const LoginForm = () => {
           fullWidth
           sx={{ mb: '30px' }}
         />}
-        <Button variant="contained" color="primary" sx={{ mb: '20px' }}>
+        <Button variant="contained" color="primary" sx={{ mb: '20px' }} onClick={()=>dispatch(setAuthenticated(true))}>
           {isLogin ? 'Login' : 'Create Account'}
         </Button>
         <Box>
@@ -43,7 +58,7 @@ const LoginForm = () => {
             {isLogin ? 'Create new account' : 'Login with existing account'}
           </Button>
         </Box>
-      </form>
+      </StyledForm>
     </Paper>
   );
 };
