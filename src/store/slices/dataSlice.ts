@@ -34,7 +34,14 @@ export const dataSlice = createSlice({
   }
 });
 
-const selectContacts = (state:RootState) => state.data.contactList;
+const selectContacts = (state:RootState) => 
+
+{
+  let sortedArr = [...state.data.contactList];
+  
+  sortedArr.sort((a, b) => a.lastName.localeCompare(b.lastName));
+  
+  return sortedArr};
 const selectFilter = (state:RootState) => state.data.filter;
 
 const selectContactId = (state:RootState, contactId: string) => contactId;
@@ -44,7 +51,6 @@ export const getFilteredContactsSelector = createSelector([selectContacts, selec
     return contactList;
   } else {
     const regex = new RegExp(filter, "i");
-    // const newContactsArray = contactList.filter(el => el.firstName.includes(filter) || el.lastName.includes(filter) || el.phoneNumber.includes(filter) || el.email.includes(filter));
     const newContactsArray = contactList.filter(el => regex.test(el.firstName) || regex.test(el.lastName) || regex.test(el.phoneNumber) || regex.test(el.email));
     return newContactsArray;
   }
