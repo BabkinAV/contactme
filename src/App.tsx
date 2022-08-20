@@ -9,7 +9,8 @@ import LoginForm from './components/layout/LoginForm';
 import Header from './components/layout/Header';
 
 import { Container } from '@mui/material';
-import ContactForm from './components/ContactForm';
+import AddContactForm from './components/AddContactForm';
+import EditContactForm from './components/EditContactForm';
 
 function App() {
   const isAuthenticated = useAppSelector((state) => state.ui.isAuthenticated);
@@ -22,8 +23,8 @@ function App() {
           <Route path="login" element={<LoginForm />} />
           <Route element={<ProtectedRoute />}>
             <Route path="list" element={<ContactList />} />
-            <Route path="add" element={<ContactForm add/>} />
-            <Route path="edit/:contactId" element={<ContactForm />} />
+            <Route path="add" element={<AddContactForm />} />
+            <Route path="edit/:contactId" element={<EditContactForm />} />
           </Route>
           <Route path="*" element={<p>There's nothing here: 404!</p>} />
         </Routes>

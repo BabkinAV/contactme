@@ -3,23 +3,22 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 //Redux stuff
-import { useAppDispatch } from '../store/hooksStore';
+import { useAppDispatch, useAppSelector } from '../store/hooksStore';
+import { getSingleContactSelector } from '../store/slices/dataSlice';
 import { addContact } from '../store/slices/dataSlice';
 
 //MUI stuff
 import { Paper, Box, Button, Typography, TextField } from '@mui/material';
 import { styled } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 const StyledForm = styled('form')({
   textAlign: 'center',
 });
 
-interface Props {
-  add?: Boolean
-}
 
-const ContactForm = ({add} : Props) => {
-  let params = useParams();
+const AddContactForm = () => {
+  
   let navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -54,7 +53,7 @@ const ContactForm = ({add} : Props) => {
     <Paper sx={{ maxWidth: '350px', mx: 'auto', p: '25px' }}>
       <StyledForm onSubmit={handleFormSubmit}>
         <Typography variant="h6" gutterBottom>
-          Please {add ? 'Add New' : 'Edit'} Contact
+          Please Add New Contact
         </Typography>
         <TextField
           id="firstname"
@@ -107,4 +106,4 @@ const ContactForm = ({add} : Props) => {
   );
 };
 
-export default ContactForm;
+export default AddContactForm;
