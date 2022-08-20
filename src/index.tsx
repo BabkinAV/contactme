@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { store } from './store/store';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './App';
 import '@fontsource/roboto/300.css';
@@ -34,7 +35,9 @@ root.render(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //MUI stuff
 import Card from '@mui/material/Card';
@@ -15,7 +16,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {Contact} from '../dataModel'
 
 
-const ContactCard = ({ firstName, lastName, phoneNumber, email} : Contact) => {
+const ContactCard = ({id, firstName, lastName, phoneNumber, email} : Contact) => {
+  const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 300, color: '#00b0ff', marginLeft: {xs: 'auto', lg: 'unset'}, marginRight: {xs: 'auto', lg: 'unset'} }}>
     <CardContent>
@@ -29,7 +31,7 @@ const ContactCard = ({ firstName, lastName, phoneNumber, email} : Contact) => {
             <PhoneIcon sx={{color:'#fff'}}/>
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary={phoneNumber} />
+        <ListItemText primary={phoneNumber} sx={{'& span': {fontSize: '14px'}}}/>
       </ListItem>
       <ListItem>
         <ListItemAvatar>
@@ -37,12 +39,12 @@ const ContactCard = ({ firstName, lastName, phoneNumber, email} : Contact) => {
             <EmailOutlinedIcon sx={{color:'#fff'}}/>
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary={email}  />
+        <ListItemText primary={email}  sx={{'& span': {fontSize: '14px'}}}/>
       </ListItem>
       </List>
     </CardContent>
     <CardActions>
-      <Button size="small" startIcon={<EditIcon />}>Edit</Button>
+      <Button size="small" startIcon={<EditIcon />} onClick={()=>navigate(`/edit/${id}`)}>Edit</Button>
       <Button size="small" color="error" startIcon={<DeleteIcon />}>Delete</Button>
     </CardActions>
   </Card>
