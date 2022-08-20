@@ -1,16 +1,14 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 //Redux stuff
-import { useAppDispatch, useAppSelector } from '../store/hooksStore';
-import { getSingleContactSelector } from '../store/slices/dataSlice';
+import { useAppDispatch } from '../store/hooksStore';
 import { addContact } from '../store/slices/dataSlice';
 
 //MUI stuff
 import { Paper, Box, Button, Typography, TextField } from '@mui/material';
 import { styled } from '@mui/material';
-import { useSelector } from 'react-redux';
 
 const StyledForm = styled('form')({
   textAlign: 'center',

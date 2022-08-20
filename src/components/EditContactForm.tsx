@@ -9,8 +9,6 @@ import { editContact } from '../store/slices/dataSlice';
 //MUI stuff
 import { Paper, Box, Button, Typography, TextField } from '@mui/material';
 import { styled } from '@mui/material';
-import { useSelector } from 'react-redux';
-import { Contact } from '../dataModel';
 
 const StyledForm = styled('form')({
   textAlign: 'center',

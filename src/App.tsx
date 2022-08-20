@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute';
 //Redux stuff
-import { useAppDispatch, useAppSelector } from './store/hooksStore';
+import { useAppSelector } from './store/hooksStore';
 
 import ContactList from './components/layout/ContactList';
 import LoginForm from './components/layout/LoginForm';
