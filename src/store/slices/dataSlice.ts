@@ -6,10 +6,12 @@ import  {contactListArray} from '../../data';
 
 interface contactState {
   contactList: Contact[];
+  filter: string
 }
 
 const initialState: contactState = {
   contactList: contactListArray,
+  filter: ''
 };
 
 export const dataSlice = createSlice({
@@ -24,17 +26,32 @@ export const dataSlice = createSlice({
       state.contactList[elementIndex] = action.payload;
     },
     deleteContact: (state, action:PayloadAction<string>) => {
-      console.log(action.payload);
       state.contactList.splice(state.contactList.findIndex((el) => el.id === action.payload), 1);
+    },
+    setFilter: (state, action:PayloadAction<string>) => {
+      state.filter = action.payload;
     }
   }
 });
 
 const selectContacts = (state:RootState) => state.data.contactList;
+const selectFilter = (state:RootState) => state.data.filter;
+
 const selectContactId = (state:RootState, contactId: string) => contactId;
+
+export const getFilteredContactsSelector = createSelector([selectContacts, selectFilter], (contactList, filter) => {
+  if (filter === '') {
+    return contactList;
+  } else {
+    const regex = new RegExp(filter, "i");
+    // const newContactsArray = contactList.filter(el => el.firstName.includes(filter) || el.lastName.includes(filter) || el.phoneNumber.includes(filter) || el.email.includes(filter));
+    const newContactsArray = contactList.filter(el => regex.test(el.firstName) || regex.test(el.lastName) || regex.test(el.phoneNumber) || regex.test(el.email));
+    return newContactsArray;
+  }
+})
 
 export const getSingleContactSelector = createSelector([selectContacts, selectContactId], (contactList, contactId) => contactList.find(arrayEl => arrayEl.id === contactId ))
 
-export const {addContact, editContact, deleteContact} = dataSlice.actions;
+export const {addContact, editContact, deleteContact, setFilter} = dataSlice.actions;
 
 export default dataSlice.reducer;

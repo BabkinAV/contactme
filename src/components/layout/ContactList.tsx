@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 //Redux stuff
-import { useAppSelector } from '../../store/hooksStore';
+import { useAppSelector} from '../../store/hooksStore';
+import { getFilteredContactsSelector } from '../../store/slices/dataSlice';
 //MUI stuff
 import Grid from '@mui/material/Unstable_Grid2';
 import { Box, Fab } from '@mui/material';
@@ -9,12 +10,12 @@ import AddIcon from '@mui/icons-material/Add';
 import ContactCard from '../ContactCard';
 
 const ContactList = () => {
-  const contactList = useAppSelector((state) => state.data.contactList);
+  const contactList = useAppSelector(getFilteredContactsSelector);
   const navigate = useNavigate();
 
   return (
     <Box>
-        <Grid container spacing={2} justifyItems="center">
+        {(contactList.length > 0) ? <Grid container spacing={2} justifyItems="center">
           {contactList.map((singleContact) => (
             <Grid key={singleContact.id} xs={12} sm={6} md={4} lg={3}>
               <ContactCard
@@ -26,7 +27,7 @@ const ContactList = () => {
               />
             </Grid>
           ))}
-        </Grid>
+        </Grid> : <p>No contacts found</p>}
         <Fab
           color="primary"
           aria-label="add"

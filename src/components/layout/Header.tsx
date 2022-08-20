@@ -2,6 +2,7 @@ import * as React from 'react';
 //Redux stuff
 import { useAppDispatch, useAppSelector } from '../../store/hooksStore';
 import { setAuthenticated } from '../../store/slices/uiSlice';
+import { setFilter } from '../../store/slices/dataSlice';
 
 //MUI stuff
 import AppBar from '@mui/material/AppBar';
@@ -173,6 +174,7 @@ const Header = () => {
                 placeholder="Search…"
                 inputProps={{ 'aria-label': 'search' }}
                 sx={{ display: 'flex' }}
+                onChange={(e)=>{dispatch(setFilter(e.target.value))}}
               />
             </Search>
           )}
