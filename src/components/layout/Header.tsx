@@ -1,6 +1,7 @@
 import * as React from 'react';
 //Redux stuff
 import { useAppDispatch, useAppSelector } from '../../store/hooksStore';
+import { logoutAction } from '../../store/actions/uiActions';
 import { setAuthenticated } from '../../store/slices/uiSlice';
 import { setFilter } from '../../store/slices/dataSlice';
 
@@ -188,7 +189,7 @@ const Header = () => {
             >
               <Button
                 onClick={() => {
-                  dispatch(setAuthenticated(false));
+                  dispatch(logoutAction());
                 }}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >

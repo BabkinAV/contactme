@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 //Redux stuff
-import { useAppSelector} from '../../store/hooksStore';
+import { useAppSelector, useAppDispatch} from '../../store/hooksStore';
+import { selectUserId } from '../../store/slices/uiSlice';
 import { getFilteredContactsSelector } from '../../store/slices/dataSlice';
+import { fetchContacts } from '../../store/actions/dataActions';
 //MUI stuff
 import Grid from '@mui/material/Unstable_Grid2';
 import { Box, Fab } from '@mui/material';
@@ -12,6 +14,18 @@ import ContactCard from '../ContactCard';
 const ContactList = () => {
   const contactList = useAppSelector(getFilteredContactsSelector);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch()
+
+  const userId = useAppSelector(selectUserId);
+
+
+
+  useEffect(() => {
+    dispatch(fetchContacts(userId!))
+  
+    
+  }, [dispatch, userId])
+  
 
   return (
     <Box>
@@ -24,6 +38,7 @@ const ContactList = () => {
                 lastName={singleContact.lastName}
                 phoneNumber={singleContact.phoneNumber}
                 email={singleContact.email}
+                userId={singleContact.userId}
               />
             </Grid>
           ))}

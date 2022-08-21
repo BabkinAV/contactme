@@ -8,6 +8,7 @@ export const contactListArray: Contact[] = [
     lastName: 'Smith',
     phoneNumber: '+7(926)5555555',
     email: 'smith@gmail.com',
+    userId: 1,
   },
   {
     id: '5aaf8a40-2062-11ed-861d-0242ac120002',
@@ -15,6 +16,7 @@ export const contactListArray: Contact[] = [
     lastName: 'Doe',
     phoneNumber: '+7(926)6666666',
     email: 'jane@gmail.com',
+    userId: 1,
   },
   {
     id: '5aaf8b6c-2062-11ed-861d-0242ac120002',
@@ -22,6 +24,7 @@ export const contactListArray: Contact[] = [
     lastName: 'Carter',
     phoneNumber: '+7(926)7777777',
     email: 'richard@gmail.com',
+    userId: 1
   },
   {
     id: '5aaf8c7a-2062-11ed-861d-0242ac120002',
@@ -29,6 +32,7 @@ export const contactListArray: Contact[] = [
     lastName: 'Ivy',
     phoneNumber: '+7(926)8888888',
     email: 'carry@gmail.com',
+    userId: 1
   },
   {
     id: '5aaf8d88-2062-11ed-861d-0242ac120002',
@@ -36,6 +40,7 @@ export const contactListArray: Contact[] = [
     lastName: 'King',
     phoneNumber: '+7(926)9999999',
     email: 'brett@gmail.com',
+    userId: 1
   },
   // {
   //   id: 6,

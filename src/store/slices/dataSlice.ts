@@ -2,7 +2,6 @@ import { createSlice, PayloadAction, createSelector } from '@reduxjs/toolkit';
 
 import type { RootState } from '../store';
 import { Contact } from '../../dataModel';
-import { contactListArray } from '../../data';
 
 interface contactState {
   contactList: Contact[];
@@ -10,7 +9,7 @@ interface contactState {
 }
 
 const initialState: contactState = {
-  contactList: contactListArray,
+  contactList: [],
   filter: '',
 };
 
@@ -18,6 +17,9 @@ export const dataSlice = createSlice({
   name: 'dataSlice',
   initialState,
   reducers: {
+    setContacts: (state, action:PayloadAction<Contact[]>) => {
+      state.contactList = action.payload
+    },
     addContact: (state, action: PayloadAction<Contact>) => {
       state.contactList.push(action.payload);
     },
@@ -37,6 +39,7 @@ export const dataSlice = createSlice({
       state.filter = action.payload;
     },
   },
+
 });
 
 const selectContacts = (state: RootState) => state.data.contactList;
@@ -72,7 +75,7 @@ export const getSingleContactSelector = createSelector(
     contactList.find((arrayEl) => arrayEl.id === contactId)
 );
 
-export const { addContact, editContact, deleteContact, setFilter } =
+export const { addContact, editContact, deleteContact, setFilter, setContacts } =
   dataSlice.actions;
 
 export default dataSlice.reducer;

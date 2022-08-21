@@ -1,0 +1,72 @@
+{
+  "contacts": [
+    {
+      "id": "5aaf8a40-2062-11ed-861d-0242ac120002",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "phoneNumber": "+7(926)6666666",
+      "email": "jane@gmail.com",
+      "userId": 1
+    },
+    {
+      "id": "5aaf8b6c-2062-11ed-861d-0242ac120002",
+      "firstName": "Richard",
+      "lastName": "Carter",
+      "phoneNumber": "+7(926)7777777",
+      "email": "richard@gmail.com",
+      "userId": 1
+    },
+    {
+      "id": "5aaf8c7a-2062-11ed-861d-0242ac120002",
+      "firstName": "Carry",
+      "lastName": "Ivy",
+      "phoneNumber": "+7(926)8888888",
+      "email": "carry@gmail.com",
+      "userId": 1
+    },
+    {
+      "id": "5aaf8d88-2062-11ed-861d-0242ac120002",
+      "firstName": "Brett",
+      "lastName": "King",
+      "phoneNumber": "+7(926)9999999",
+      "email": "brett@gmail.com",
+      "userId": 2
+    },
+    {
+      "firstName": "Andrey",
+      "lastName": "Babkin",
+      "phoneNumber": "+7(926)9999999",
+      "email": "andr@gmail.com",
+      "userId": 2,
+      "id": "n9wz_eX"
+    },
+    {
+      "id": "646494d6-9905-46c3-9aa5-cb781d940d65",
+      "firstName": "Clifford",
+      "lastName": "Simak",
+      "phoneNumber": "5655555258",
+      "email": "cliff@gmail.com",
+      "userId": 1
+    },
+    {
+      "id": "a740417e-573b-4475-9e92-3891b23e2e07",
+      "firstName": "Stephen",
+      "lastName": "King",
+      "phoneNumber": "55757447474",
+      "email": "steve@gmail.com",
+      "userId": 2
+    }
+  ],
+  "users": [
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$0.KVzJwfRqkC2fIfOVIJbe99L32F0vlBRkxLYqxhT6/txB4aD7yK2",
+      "id": 1
+    },
+    {
+      "email": "test2@test.com",
+      "password": "$2a$10$3fVnjVvYe.r5hO8SOdGkjeFPegZ5qIV5KL333AZ9kDGn9tueft7kK",
+      "id": 2
+    }
+  ]
+}
