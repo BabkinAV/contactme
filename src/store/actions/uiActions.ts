@@ -3,11 +3,11 @@ import { setAuthenticated, setUserId } from '../slices/uiSlice';
 import { setContacts, setFilter } from '../slices/dataSlice';
 
 
-import { AxiosError, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 
 import axios from 'axios';
 
-const uri = 'http://localhost:5000/signin';
+const uri = 'https://and1-server-app.herokuapp.com/signin';
 
 
 export const loginAction = (user:{email: string, password: string}) =>(dispatch:AppDispatch) => {
@@ -29,7 +29,7 @@ export const loginAction = (user:{email: string, password: string}) =>(dispatch:
 }
 
 export const registerAction = (user:{email: string, password: string}) =>(dispatch:AppDispatch) => {
-  return axios.post('http://localhost:5000/signup', user, {
+  return axios.post('https://and1-server-app.herokuapp.com/signup', user, {
     headers: {
       'Content-Type': 'application/json',
     },

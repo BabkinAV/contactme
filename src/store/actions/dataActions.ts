@@ -5,7 +5,7 @@ import { AxiosError, AxiosResponse } from 'axios';
 
 import axios from 'axios';
 
-const uri = 'http://localhost:5000/contacts';
+const uri = 'https://and1-server-app.herokuapp.com/contacts';
 
 export const fetchContacts = (userId:number) => (dispatch: AppDispatch) => {
   axios
