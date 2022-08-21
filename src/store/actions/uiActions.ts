@@ -3,7 +3,7 @@ import { setAuthenticated, setUserId } from '../slices/uiSlice';
 import { setContacts, setFilter } from '../slices/dataSlice';
 
 
-import { AxiosError, AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 
 import axios from 'axios';
 

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 //Redux stuff
 import { useAppDispatch } from '../store/hooksStore';
-import { deleteContact } from '../store/slices/dataSlice';
 import { removeContact } from '../store/actions/dataActions';
 
 //MUI stuff
