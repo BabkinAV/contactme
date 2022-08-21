@@ -55,6 +55,14 @@
       "phoneNumber": "55757447474",
       "email": "steve@gmail.com",
       "userId": 2
+    },
+    {
+      "id": "f0401c76-537e-4c4b-8185-ac2218434994",
+      "firstName": "Andrey",
+      "lastName": "Ivanov",
+      "phoneNumber": "123456",
+      "email": "test3@test.com",
+      "userId": 3
     }
   ],
   "users": [
@@ -67,6 +75,11 @@
       "email": "test2@test.com",
       "password": "$2a$10$3fVnjVvYe.r5hO8SOdGkjeFPegZ5qIV5KL333AZ9kDGn9tueft7kK",
       "id": 2
+    },
+    {
+      "email": "test3@test.com",
+      "password": "$2a$10$iDmXaKStZfd6Cf1Gldlo7eHStkMuVjFGiQ5ldtxwHS/oS2IljlYXW",
+      "id": 3
     }
   ]
 }

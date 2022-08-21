@@ -22,7 +22,7 @@ export const loginAction = (user:{email: string, password: string}) =>(dispatch:
       id: number
     }
   }>) => {
-    console.log(res.data.accessToken)
+    localStorage.setItem('IdToken', res.data.accessToken);
     dispatch(setAuthenticated(true));
     dispatch(setUserId(res.data.user.id));
   })
@@ -40,6 +40,7 @@ export const registerAction = (user:{email: string, password: string}) =>(dispat
       id: number
     }
   }>) => {
+    localStorage.setItem('IdToken', res.data.accessToken);
     dispatch(setAuthenticated(true));
     dispatch(setUserId(res.data.user.id));
   })
@@ -50,5 +51,6 @@ export const logoutAction =() => (dispatch:AppDispatch) => {
   dispatch(setContacts([]));
   dispatch(setFilter(''));
   dispatch(setAuthenticated(false));
+  localStorage.removeItem('IdToken');
 
 }
