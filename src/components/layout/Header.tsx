@@ -138,7 +138,7 @@ const Header = () => {
               >
                 <MenuItem
                   onClick={() => {
-                    dispatch(setAuthenticated(false));
+                    dispatch(logoutAction());
                   }}
                 >
                   <Typography textAlign="center">Logout</Typography>
