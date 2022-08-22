@@ -46,7 +46,7 @@ if (token) {
   return (
     <div className="App">
       <Header />
-      <Container sx={{ mt: 4 }}>
+      <Container sx={{ mt: {xs: 16, sm: 12} }}>
         <Routes>
           <Route index element={<LoginForm />} />
           <Route path="login" element={<LoginForm />} />

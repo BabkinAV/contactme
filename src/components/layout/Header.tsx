@@ -2,7 +2,6 @@ import * as React from 'react';
 //Redux stuff
 import { useAppDispatch, useAppSelector } from '../../store/hooksStore';
 import { logoutAction } from '../../store/actions/uiActions';
-import { setAuthenticated } from '../../store/slices/uiSlice';
 import { setFilter } from '../../store/slices/dataSlice';
 
 //MUI stuff
@@ -77,7 +76,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
@@ -138,7 +137,7 @@ const Header = () => {
               >
                 <MenuItem
                   onClick={() => {
-                    dispatch(setAuthenticated(false));
+                    dispatch(logoutAction());
                   }}
                 >
                   <Typography textAlign="center">Logout</Typography>
