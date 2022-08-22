@@ -96,6 +96,7 @@ const LoginForm = () => {
         <TextField
           id="password"
           label="password"
+          type="password"
           variant="standard"
           fullWidth
           sx={{ mb: '30px' }}
