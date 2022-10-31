@@ -19,5 +19,15 @@ A full-stack (MERN) contact manager application.
  - Full-text search of the condtacts
  - Store the contacts on express database (Backend code:[https://github.com/BabkinAV/fake-server](https://github.com/BabkinAV/fake-server))
 
+ ## Tech used / dependencies
 
- 
+1. [Create React App](https://reactjs.org/docs/create-a-new-react-app.html)
+2. [Material UI](https://mui.com/)
+3. [Redux](https://react-redux.js.org/)
+4. [JSON-server](https://github.com/typicode/json-server)
+
+
+ ## Running the project locally
+From the repo:
+1. Clone the project locally
+2. Run `npm install` in your bash\command line
