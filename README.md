@@ -16,7 +16,7 @@ A full-stack (MERN) contact manager application.
 
  - Authorization and new user registration;
  - Create, read, update, delete of contacts
- - Full-text search of the condtacts
+ - Full-text search of the contacts
  - Store the contacts on express database (Backend code:[https://github.com/BabkinAV/fake-server](https://github.com/BabkinAV/fake-server))
 
  ## Tech used / dependencies
