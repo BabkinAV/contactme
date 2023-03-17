@@ -5,7 +5,7 @@ import { AxiosError, AxiosResponse } from 'axios';
 
 import axios from 'axios';
 
-const uri = 'https://and1-server-app.herokuapp.com/contacts';
+const uri = `${process.env.REACT_APP_BACKEND_ADDRESS}/contacts`;
 
 export const fetchContacts = (userId:number) => (dispatch: AppDispatch) => {
   axios

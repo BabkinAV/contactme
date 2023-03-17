@@ -7,11 +7,10 @@ import { AxiosResponse } from 'axios';
 
 import axios from 'axios';
 
-const uri = 'https://and1-server-app.herokuapp.com/signin';
 
 
 export const loginAction = (user:{email: string, password: string}) =>(dispatch:AppDispatch) => {
-  return axios.post(uri, user, {
+  return axios.post(`${process.env.REACT_APP_BACKEND_ADDRESS}/signin`, user, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -29,7 +28,7 @@ export const loginAction = (user:{email: string, password: string}) =>(dispatch:
 }
 
 export const registerAction = (user:{email: string, password: string}) =>(dispatch:AppDispatch) => {
-  return axios.post('https://and1-server-app.herokuapp.com/signup', user, {
+  return axios.post(`${process.env.REACT_APP_BACKEND_ADDRESS}/signup`, user, {
     headers: {
       'Content-Type': 'application/json',
     },
